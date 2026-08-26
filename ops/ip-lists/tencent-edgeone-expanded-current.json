@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-11T09:14:02.677Z",
+  "sources": [
+    {
+      "asn": "AS139341",
+      "sourceUrl": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS139341",
+      "ipv4PrefixCount": 987
+    },
+    {
+      "asn": "AS132203",
+      "sourceUrl": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS132203",
+      "ipv4PrefixCount": 1094
+    }
+  ],
+  "samplesPerPrefix": 12,
+  "candidateCount": 23364,
+  "output": "C:\\Users\\Admin\\vpn-panel-api\\ops\\ip-lists\\tencent-edgeone-expanded-current.txt"
+}

@@ -1,0 +1,310 @@
+{
+  "log": {
+    "loglevel": "error"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 18088,
+      "protocol": "vless",
+      "tag": "vless-ws-local",
+      "settings": {
+        "clients": [
+          {
+            "id": "7a1639d3-242e-4cd3-88a5-585c4615323d",
+            "email": "muhammetcaryaga90@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "c5ff11e3-0d9c-4fc8-976a-5fdb645cdc21",
+            "email": "mekan_muhammet@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "e40a37f2-b037-4109-a272-20656441e2d5",
+            "email": "user-usr_QRqJ3fZfTQF6cN91",
+            "level": 0
+          },
+          {
+            "id": "d3923a12-d6bc-40b3-85f8-389847f27935",
+            "email": "user-usr_a0eXs0pMRLoF002B",
+            "level": 0
+          },
+          {
+            "id": "5eba4e1b-e46d-42a1-8674-c5f2fbafa56f",
+            "email": "user-usr_ThTcfI-SYGQhgZs8",
+            "level": 0
+          },
+          {
+            "id": "395feda0-6313-4bf4-9c7f-2effe251b721",
+            "email": "user-usr_bh2_3gVbyNN7_uHx",
+            "level": 0
+          },
+          {
+            "id": "a4c632a9-5d76-46aa-ae57-b139d642f33d",
+            "email": "user-usr_AA8XZ3zlE0WYgnWE",
+            "level": 0
+          },
+          {
+            "id": "81e95246-6a1c-4997-8f5e-e6433dac0fec",
+            "email": "user-usr_-p4QdcScmAgqlLo9",
+            "level": 0
+          },
+          {
+            "id": "8814f490-6dbd-42ea-9d0c-24d8aa0c7fd4",
+            "email": "user-usr_tCdpE_yknsBxlXYb",
+            "level": 0
+          },
+          {
+            "id": "3113e691-eb7e-4c6b-b4b4-352232ed4036",
+            "email": "user-usr_XVOYEdI6HlRVrwi4",
+            "level": 0
+          },
+          {
+            "id": "f34ed0ec-e64e-4332-a2b5-a1196082009b",
+            "email": "user-usr_4G8oT-uqPvD-Dkti",
+            "level": 0
+          },
+          {
+            "id": "f57f47e8-2ed7-4cea-bf27-e1a5e064f7b2",
+            "email": "user-usr_13G_pMde3dooHSyL",
+            "level": 0
+          },
+          {
+            "id": "6bba4b8a-dfaa-4168-91c2-b3ea06c089cf",
+            "email": "user-usr_bnT1ODs8-bzLz0WZ",
+            "level": 0
+          },
+          {
+            "id": "acff5a46-c53d-489a-85fb-96908b3a39f1",
+            "email": "user-usr_vK8z3d2DVDoeUP6L",
+            "level": 0
+          },
+          {
+            "id": "cbdd2d2c-cb14-4451-826a-988c7f501cbe",
+            "email": "user-usr_-6LDeXASj2DYbLIz",
+            "level": 0
+          },
+          {
+            "id": "5b68bea9-8469-402e-9ff8-90eb5e51f0bc",
+            "email": "user-usr_FCr4-NQfQGuTLad4",
+            "level": 0
+          },
+          {
+            "id": "75aa4e06-eb4b-4406-b1de-fc2664a1bc77",
+            "email": "user-usr_ciXkGQAkRnN2kZD1",
+            "level": 0
+          },
+          {
+            "id": "506aaa3d-a9ce-40f2-b3a0-45cd62992dbc",
+            "email": "danatar778@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "35b794f2-3e5e-4da3-b477-8e6a2e34a618",
+            "email": "user-usr_3WtwlCfM-POtwL_j",
+            "level": 0
+          },
+          {
+            "id": "f8561297-015e-4ded-b737-66419c3e92ff",
+            "email": "user-usr_XLuoZ-uE1aK6SKL_",
+            "level": 0
+          },
+          {
+            "id": "d3743101-b7df-4a26-b9f5-cf398e77a38f",
+            "email": "poncik90@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "87493363-12ed-46e6-9a2d-efaa09afa676",
+            "email": "user-usr_m0nLJCsxWivm90ou",
+            "level": 0
+          },
+          {
+            "id": "1f870301-5f1a-465e-84ab-a2cd9b3bf469",
+            "email": "user-usr_agcFHkXUdYpWV8br",
+            "level": 0
+          },
+          {
+            "id": "84a1829a-fb3f-4b96-bba7-e8852f50d5c3",
+            "email": "murikvip@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "24fefeef-920b-467b-ab40-87aa8b76508b",
+            "email": "ahmetvip892@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "d37387b5-b454-43c5-bc56-4f5e817f6c21",
+            "email": "user-usr_s0OwNmtve04RXNoD",
+            "level": 0
+          },
+          {
+            "id": "0150291f-338e-4087-9a10-d404398c5909",
+            "email": "m189vip@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "93861a21-fb6d-41bf-b166-b139cd3489c1",
+            "email": "selim1@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "47b2136c-dcdf-4501-8757-54b57f757649",
+            "email": "bazzy89@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "cf7fc52f-f087-4639-a397-a6fd192dd79f",
+            "email": "user-usr_JbA045UCt5bRQaCf",
+            "level": 0
+          },
+          {
+            "id": "749f6ea8-a214-4df3-af7e-c70aa56e9bed",
+            "email": "Aygozel67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "b12b46b3-cccf-4248-b55c-8655f0700889",
+            "email": "bahbit67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "0eebd766-0d25-4554-abc7-c7b62a41c4d1",
+            "email": "dowlet67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "6d95681b-7a44-4b39-a03d-52277b6e5183",
+            "email": "nurana67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "357e6cf8-06cd-4e68-ac23-7a9e5c407a18",
+            "email": "Gunes67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "d74abc4b-1725-4976-b7e9-496b1e845e7c",
+            "email": "sumruh67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "af19c9b4-171e-44c7-a634-cdff63c500d5",
+            "email": "gozelvip89@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "a68af888-ed6b-4449-b2bf-80cbdfc3efb7",
+            "email": "milana63@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "502c051c-1273-4405-8f67-f496a718db5a",
+            "email": "ruzanaaa23@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "1eb1e7ba-78e8-4fe8-9b4f-896b899a2c67",
+            "email": "user-usr_RC7Iu9qkPEbkbRpO",
+            "level": 0
+          },
+          {
+            "id": "cd3e66f2-1796-4118-82ce-f7f878a11a6a",
+            "email": "Zohre90@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "e0b8cf12-9e64-4625-9181-53a56f8bf650",
+            "email": "eyupvip89@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "06475370-6395-4e4c-9191-c9db8b0cbacc",
+            "email": "svet167@gmai.com",
+            "level": 0
+          },
+          {
+            "id": "2020f43d-8cdd-4282-83f4-be023897f6c2",
+            "email": "azym2@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "3ed35754-f88c-42c9-8fad-ade1ad5a3695",
+            "email": "arslannvip9@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "12cf872d-f260-42df-9d0b-1235eb6350fe",
+            "email": "bossan89@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "7c6709e1-6e41-4a74-a341-d436fe430cae",
+            "email": "serdarvip5678@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "42d25650-4025-4104-b71b-fdaf98bc110f",
+            "email": "serdarvip56@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "94f071c2-a8e9-405c-aa0a-0935f4ef55d4",
+            "email": "hezret789@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "74511bec-dd35-4120-ba44-40231b6af27b",
+            "email": "batyr78@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "97cda7f0-7f82-4f05-8990-3480ea612793",
+            "email": "kompvip@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "89e61942-d6b7-490f-9b6c-23e153557822",
+            "email": "nazli67@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "cbb019d0-c345-4b37-b515-24fc68b73046",
+            "email": "user-usr_bnjXUy4O1NZufeqW",
+            "level": 0
+          },
+          {
+            "id": "8aa118ac-653b-4b09-930d-dad72b121269",
+            "email": "halyldade@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "70af0820-8582-48b7-ada2-32c5b7248cf9",
+            "email": "merdankl@gmail.com",
+            "level": 0
+          },
+          {
+            "id": "8062f161-b23e-4074-be7a-e11cf656535c",
+            "email": "maksatagam@gmail.com",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+tunnel: 32539081-6ad5-4ae1-b2ad-0f05b8feec36
+credentials-file: /etc/cloudflared/32539081-6ad5-4ae1-b2ad-0f05b8feec36.json
+protocol: quic
+
+ingress:
+  - hostname: fornex.levospeed.online
+    service: http://127.0.0.1:18094
+  - hostname: fornex.levospeed.click
+    service: http://127.0.0.1:18094
+  - service: http_status:404

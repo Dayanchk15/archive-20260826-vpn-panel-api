@@ -1,0 +1,22 @@
+services:
+  vpn-standalone-sync-agent:
+    build:
+      context: ..
+      dockerfile: vpn-edge-sync-agent/Dockerfile
+    container_name: ${CONTAINER_NAME}
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ${EDGE_DIR}:${EDGE_DIR}
+      - ${XRAY_HOST_BIN:-/usr/local/bin/xray}:/usr/local/bin/xray:ro
+    environment:
+      EDGE_ID: ${EDGE_ID}
+      EDGE_SYNC_KEY: ${EDGE_SYNC_KEY}
+      PANEL_PULL_URL: ${PANEL_PULL_URL:-https://sub.twidu.com/internal/edge/clients}
+      PANEL_PULL_INTERVAL_MS: ${PANEL_PULL_INTERVAL_MS:-15000}
+      AGENT_PORT: ${AGENT_PORT}
+      EDGE_ENV_FILE: ${EDGE_DIR}/sync.env
+      XRAY_API_ADDR: ${XRAY_API_ADDR}
+      XRAY_INBOUND_TAG: ${XRAY_INBOUND_TAG}
+      XRAY_CLIENT_FLOW: ${XRAY_CLIENT_FLOW:-}
+      EDGE_SYNC_ALLOW_RESTART: "false"

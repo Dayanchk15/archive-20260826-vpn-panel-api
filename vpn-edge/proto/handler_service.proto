@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package xray.app.proxyman.command;
+
+// Minimal subset of Xray HandlerService/TypedMessage needed for
+// hot AddUser/RemoveUser via AlterInbound.
+
+message TypedMessage {
+  string type = 1;
+  bytes value = 2;
+}
+
+message User {
+  uint32 level = 1;
+  string email = 2;
+  TypedMessage account = 3;
+}
+
+// VLESS account typed payload (used inside TypedMessage.account.value).
+message Account {
+  string id = 1;
+  string flow = 2;
+  string encryption = 3;
+}
+
+message AddUserOperation {
+  User user = 1;
+}
+
+message RemoveUserOperation {
+  string email = 1;
+}
+
+message AlterInboundRequest {
+  string tag = 1;
+  TypedMessage operation = 2;
+}
+
+message AlterInboundResponse {}
+
+service HandlerService {
+  rpc AlterInbound(AlterInboundRequest) returns (AlterInboundResponse);
+}

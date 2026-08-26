@@ -1,0 +1,94 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "bunny-xhttp-in",
+      "listen": "0.0.0.0",
+      "port": 18101,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "cbb019d0-c345-4b37-b515-24fc68b73046",
+            "email": "dayanch-vip",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": {
+          "path": "/media/v6/nl/sync",
+          "mode": "packet-up",
+          "noGRPCHeader": false,
+          "noSSEHeader": false,
+          "scMaxConcurrentPosts": 100,
+          "scMaxEachPostBytes": "1000000",
+          "scMinPostsIntervalMs": 30,
+          "xPaddingBytes": "0"
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpKeepAliveIdle": 60,
+          "tcpKeepAliveInterval": 30
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "nl-upstream",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.127.178.70",
+            "port": 8081,
+            "users": [
+              {
+                "id": "cbb019d0-c345-4b37-b515-24fc68b73046",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "none",
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpKeepAliveIdle": 60,
+          "tcpKeepAliveInterval": 30
+        }
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "network": "udp",
+        "port": "443",
+        "outboundTag": "block"
+      }
+    ]
+  }
+}

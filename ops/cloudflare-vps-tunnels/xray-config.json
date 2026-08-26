@@ -1,0 +1,53 @@
+{
+  "log": {
+    "access": "/var/log/xray-cloudflare-ws-access.log",
+    "error": "/var/log/xray-cloudflare-ws-error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "cloudflare-vless-ws",
+      "listen": "127.0.0.1",
+      "port": 18094,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "72f68310-dd1b-4ec8-accc-9ac1525a8a4c",
+            "email": "cf-speed"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/"
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ]
+}

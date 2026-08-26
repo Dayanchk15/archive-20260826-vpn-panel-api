@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /
+
+# Apache/FastCGI can otherwise remove Bearer authorization before PHP sees it.
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# DADA VPN mobile API (GET/POST/DELETE are handled by index.php).
+RewriteRule ^api/mobile/v1(?:/.*)?$ index.php [L,QSA]
+
+# /api/sub/TOKEN -> index.php
+RewriteRule ^api/sub/([A-Za-z0-9]+)$ index.php [L,QSA]
+RewriteRule ^api/status/([A-Za-z0-9]+)$ index.php [L,QSA]
+RewriteRule ^sub/([A-Za-z0-9]+)$ index.php [L,QSA]
+RewriteRule ^f/([A-Za-z0-9_-]+)$ index.php [L,QSA]

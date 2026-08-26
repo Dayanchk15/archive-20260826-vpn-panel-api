@@ -1,0 +1,11 @@
+CF FR1
+vless://72f68310-dd1b-4ec8-accc-9ac1525a8a4c@156.238.181.141:443?type=ws&host=fr1.levospeed.click&path=/&security=tls&sni=fr1.levospeed.click&alpn=http/1.1&fp=chrome&fragment=2,0-1,tlshello#CF-FR1
+
+CF FR2
+vless://72f68310-dd1b-4ec8-accc-9ac1525a8a4c@156.238.181.141:443?type=ws&host=fr2.levospeed.click&path=/&security=tls&sni=fr2.levospeed.click&alpn=http/1.1&fp=chrome&fragment=2,0-1,tlshello#CF-FR2
+
+CF Fornex
+vless://72f68310-dd1b-4ec8-accc-9ac1525a8a4c@156.238.181.141:443?type=ws&host=fornex.levospeed.click&path=/&security=tls&sni=fornex.levospeed.click&alpn=http/1.1&fp=chrome&fragment=2,0-1,tlshello#CF-Fornex
+
+CF Tampa
+vless://72f68310-dd1b-4ec8-accc-9ac1525a8a4c@156.238.181.141:443?type=ws&host=tampa.levospeed.click&path=/&security=tls&sni=tampa.levospeed.click&alpn=http/1.1&fp=chrome&fragment=2,0-1,tlshello#CF-Tampa

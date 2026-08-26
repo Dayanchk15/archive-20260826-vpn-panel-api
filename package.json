@@ -1,0 +1,36 @@
+{
+  "name": "vpn-panel-api",
+  "version": "1.0.0",
+  "description": "VPN subscription panel API for real VPS",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "audit:junk": "node scripts/audit-local-junk.mjs",
+    "test": "node --test test/*.test.js",
+    "check:repository": "node scripts/check-repository.mjs",
+    "mobile:release-manifest": "node scripts/sign-mobile-release.mjs",
+    "bootstrap": "node scripts/bootstrap.js",
+    "sync-memory": "node scripts/sync-project-log-memory.mjs push",
+    "sync-memory:pull": "node scripts/sync-project-log-memory.mjs pull",
+    "sync-memory:git": "node scripts/sync-project-log-git.mjs sync",
+    "sync-memory:git:pull": "node scripts/sync-project-log-git.mjs pull",
+    "sync-memory:git:push": "node scripts/sync-project-log-git.mjs push"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@cursor/sdk": "^1.0.22",
+    "@kastov/cryptohapp": "^1.1.2",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.21.0",
+    "ssh2": "^1.16.0",
+    "uuid": "^11.1.0"
+  }
+}

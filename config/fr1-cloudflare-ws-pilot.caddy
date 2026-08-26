@@ -1,0 +1,16 @@
+fr1.levospeed.click {
+    header Alt-Svc "clear"
+
+    @dayanch_ws path /media/v3/fr1/ws
+    handle @dayanch_ws {
+        reverse_proxy 127.0.0.1:18094 {
+            header_up Host {host}
+            flush_interval -1
+            transport http {
+                versions 1.1
+            }
+        }
+    }
+
+    respond 404
+}

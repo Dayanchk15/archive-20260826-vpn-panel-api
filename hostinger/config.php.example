@@ -1,0 +1,11 @@
+<?php
+/**
+ * Скопируйте в config.php на Hostinger (public_html/sub/).
+ * DNS sub.twidu.com -> A-запись IP Hostinger (как у twidu.com), НЕ на VPS.
+ * Клиенты в Туркменистане ходят на Hostinger; Hostinger запрашивает VPS по IP.
+ */
+return [
+    'upstream' => 'https://45.140.42.39',
+    'upstream_host' => 'sub.twidu.com',
+    'proxy_secret' => '',
+];

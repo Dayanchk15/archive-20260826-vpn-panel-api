@@ -1,0 +1,18 @@
+# Dayanch VIP EU relay edge — separate from remnanode :443
+services:
+  vpn-relay-edge:
+    build:
+      context: ./vpn-edge
+    restart: unless-stopped
+    ports:
+      - "${EDGE_PORT:-8081}:8080"
+      - "${XRAY_API_PORT:-10085}:10085"
+    environment:
+      PORT: "8080"
+      VLESS_WS_PATH: "/"
+      XRAY_LOG_LEVEL: error
+      XRAY_EDGE_MODE: tcp
+      VLESS_CLIENTS_JSON: ${VLESS_CLIENTS_JSON:-[]}
+      PANEL_REPORT_URL: ${PANEL_REPORT_URL:-}
+      EDGE_REPORT_KEY: ${EDGE_REPORT_KEY:-}
+      TRAFFIC_NODE_ID: ${TRAFFIC_NODE_ID:-relay-eu-edge}

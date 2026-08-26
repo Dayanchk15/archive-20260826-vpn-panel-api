@@ -1,0 +1,15 @@
+[Unit]
+Description=Levospeed isolated Cloudflare VLESS WebSocket origin
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/xray run -config /opt/vpn-cloudflare-ws/config.json
+Restart=always
+RestartSec=3
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

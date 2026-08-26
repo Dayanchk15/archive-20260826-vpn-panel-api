@@ -1,0 +1,14 @@
+[Unit]
+Description=FR1 Bunny Xray v2 zero-disconnect clone
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/xray run -c /opt/vpn-fr1-bunny-xhttp-v2/config.json
+Restart=always
+RestartSec=2
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

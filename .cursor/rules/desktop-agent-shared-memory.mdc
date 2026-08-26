@@ -1,0 +1,31 @@
+---
+description: Общая память Desktop Agent — PROJECT_LOG.md (IDE + Telegram)
+alwaysApply: true
+---
+
+# Desktop Agent — общая память (Git)
+
+Файл памяти: `PROJECT_LOG.md` в корне `vpn-panel-api`.
+
+Синхронизация через **GitHub** (`Dayanchk15/vpn-panel-api`, ветка `main`):
+
+| Когда | Что происходит |
+|-------|----------------|
+| Старт сессии Cursor | hook `pull` — забирает память с GitHub |
+| Конец ответа агента (stop) | hook `push` — отправляет изменения PROJECT_LOG |
+| Каждое сообщение в Telegram | `pull` → ответ → `push` |
+
+## Перед работой
+
+1. Прочитай `PROJECT_LOG.md` (после pull он актуален).
+2. При необходимости вручную: `npm run sync-memory:git:pull`
+
+## После изменений
+
+1. Допиши блок в **«Журнал изменений»** в `PROJECT_LOG.md`.
+2. Push выполнится автоматически через hook `stop` или вручную:
+   `npm run sync-memory:git:push`
+
+Telegram **Desktop Agent** использует тот же файл в git-клоне на VPS (`/git-sync/PROJECT_LOG.md`).
+
+Не писать секреты в журнал.

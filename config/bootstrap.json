@@ -1,0 +1,35 @@
+{
+  "storage": {
+    "root": "data/files",
+    "globalSubscriptionPath": "subscription.txt"
+  },
+  "vpn": {
+    "sharedUuid": "8a33bfed-7a7b-4684-8ab1-88a19b364b2e",
+    "sni": "www.google.com",
+    "fingerprint": "chrome",
+    "alpn": "http/1.1",
+    "network": "ws",
+    "security": "tls",
+    "path": "/",
+    "port": 443
+  },
+  "defaultUser": {
+    "name": "Default user",
+    "uuid": "8a33bfed-7a7b-4684-8ab1-88a19b364b2e",
+    "days": 365,
+    "trafficLimitGB": 50,
+    "note": "миграция со старого subscription"
+  },
+  "globalFile": {
+    "name": "Global subscription",
+    "slug": "global",
+    "storagePath": "subscription.txt",
+    "contentFile": "data/subscription.global.txt"
+  },
+  "globalSubscription": {
+    "enabled": true,
+    "subscriptionMode": "custom",
+    "contentFile": "data/subscription.global.txt"
+  },
+  "serversFile": "scripts/servers.production.json"
+}

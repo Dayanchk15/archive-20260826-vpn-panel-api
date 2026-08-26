@@ -1,0 +1,1 @@
+vless://12305a38-97cb-49fb-9aa3-cf91815c92e9@20.207.70.99:443?encryption=none&security=tls&sni=zcv4l391-10080.inc1.devtunnels.ms&alpn=http%2F1.1&fp=chrome&type=ws&host=zcv4l391-10080.inc1.devtunnels.ms&path=%2F995b9db99d464f449da2fbce#TM-to-Starlink-India

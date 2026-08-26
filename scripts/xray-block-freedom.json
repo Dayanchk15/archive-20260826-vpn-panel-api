@@ -1,0 +1,9 @@
+{
+  "outbounds": [
+    {
+      "tag": "block",
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}

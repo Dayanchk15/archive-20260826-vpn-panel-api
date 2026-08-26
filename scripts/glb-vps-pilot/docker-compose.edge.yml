@@ -1,0 +1,19 @@
+# VPN edge on VPS for Google LB pilot (TLS terminates at GLB, plain WS here on 8080).
+services:
+  vpn-glb-edge:
+    build:
+      context: ../../vpn-edge
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      # Expose Xray HandlerService API to the host so vpn-edge-sync-agent can hot-modify users.
+      - "${XRAY_API_PORT:-10085}:10085"
+    environment:
+      PORT: "8080"
+      VLESS_WS_PATH: "/"
+      XRAY_LOG_LEVEL: error
+      VLESS_CLIENTS_JSON: ${VLESS_CLIENTS_JSON:-[]}
+      PANEL_REPORT_URL: ${PANEL_REPORT_URL:-}
+      EDGE_REPORT_KEY: ${EDGE_REPORT_KEY:-}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8080/ >/dev/null 2>&1 || exit 0"]

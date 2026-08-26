@@ -1,0 +1,26 @@
+node_modules/
+.env
+.env.vps
+.env.local
+*.log
+.DS_Store
+keys/
+backup/
+config/vpn_panel_all_data_final.md
+/data/gcp-credentials/
+*.pem
+id_ed25519
+id_rsa
+*.zip
+
+# Local diagnostics and generated scratch files
+/tmp-*
+/_tmp*
+/tmp/alibaba-test-uuid.dpapi
+/scripts/tmp-*
+/scripts/_tmp*
+*.bin
+
+# Local production configuration (examples remain tracked)
+/hostinger/config.php
+/hostinger/levospeed-config.php

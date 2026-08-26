@@ -1,0 +1,15 @@
+[Unit]
+Description=Levospeed Cloudflare Tunnel FR2
+After=network-online.target xray-cloudflare-ws.service
+Wants=network-online.target
+Requires=xray-cloudflare-ws.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/cloudflared tunnel --config /etc/cloudflared/levocf.yml run 7e38e974-0d40-4d79-8bb6-71f53e656802
+Restart=always
+RestartSec=5
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

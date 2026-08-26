@@ -1,0 +1,120 @@
+services:
+  vpn-panel-postgres:
+    image: postgres:16-alpine
+    container_name: vpn-panel-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vpn_panel
+      POSTGRES_USER: vpn_panel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    volumes:
+      - /opt/vpn-panel/postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vpn_panel -d vpn_panel"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  vpn-panel-api:
+    build: .
+    container_name: vpn-panel-api-vps
+    restart: unless-stopped
+    depends_on:
+      vpn-panel-postgres:
+        condition: service_healthy
+    environment:
+      PORT: 8080
+      NODE_ENV: production
+      DATABASE_URL: postgres://vpn_panel:${POSTGRES_PASSWORD}@vpn-panel-postgres:5432/vpn_panel
+      SERVER_SECRETS_KEY: ${SERVER_SECRETS_KEY:?set SERVER_SECRETS_KEY}
+      LOCAL_STORAGE_DIR: /data/files
+      SUBSCRIPTION_BASE_URL: https://sub.twidu.com
+      PUBLIC_BASE_URL: https://sub.twidu.com
+      ADMIN_API_KEY: ${ADMIN_API_KEY:?set ADMIN_API_KEY}
+      EDGE_REPORT_KEY: ${EDGE_REPORT_KEY:?set EDGE_REPORT_KEY}
+      AUTH_JWT_SECRET: ${AUTH_JWT_SECRET:?set AUTH_JWT_SECRET}
+      OWNER_USERNAME: ${OWNER_USERNAME:-owner}
+      OWNER_PASSWORD: ${OWNER_PASSWORD:?set OWNER_PASSWORD}
+      MOBILE_JWT_SECRET: ${MOBILE_JWT_SECRET:?set MOBILE_JWT_SECRET}
+      MOBILE_ACCESS_TOKEN_MINUTES: ${MOBILE_ACCESS_TOKEN_MINUTES:-15}
+      MOBILE_REFRESH_TOKEN_DAYS: ${MOBILE_REFRESH_TOKEN_DAYS:-30}
+      MOBILE_ACTIVATION_RATE_WINDOW_SECONDS: ${MOBILE_ACTIVATION_RATE_WINDOW_SECONDS:-900}
+      MOBILE_ACTIVATION_RATE_MAX: ${MOBILE_ACTIVATION_RATE_MAX:-8}
+      MOBILE_PUBLIC_ACCESS: ${MOBILE_PUBLIC_ACCESS:-false}
+      MOBILE_PUBLIC_UUID: ${MOBILE_PUBLIC_UUID:-}
+      MOBILE_PUBLIC_RATE_WINDOW_SECONDS: ${MOBILE_PUBLIC_RATE_WINDOW_SECONDS:-3600}
+      MOBILE_PUBLIC_RATE_MAX_PER_IP: ${MOBILE_PUBLIC_RATE_MAX_PER_IP:-120}
+      HIDDIFY_ANDROID_PUBLIC_ACCESS: ${HIDDIFY_ANDROID_PUBLIC_ACCESS:-true}
+      HIDDIFY_ANDROID_PUBLIC_UUID: ${HIDDIFY_ANDROID_PUBLIC_UUID:-}
+      HIDDIFY_ANDROID_API_BASE_URL: ${HIDDIFY_ANDROID_API_BASE_URL:-https://levospeed.it.com}
+      HIDDIFY_ANDROID_FRAGMENTATION_ENABLED: ${HIDDIFY_ANDROID_FRAGMENTATION_ENABLED:-true}
+      HIDDIFY_ANDROID_LATEST_VERSION_CODE: ${HIDDIFY_ANDROID_LATEST_VERSION_CODE:-1}
+      HIDDIFY_ANDROID_LATEST_VERSION_NAME: ${HIDDIFY_ANDROID_LATEST_VERSION_NAME:-0.1.0}
+      HIDDIFY_ANDROID_MINIMUM_VERSION_CODE: ${HIDDIFY_ANDROID_MINIMUM_VERSION_CODE:-1}
+      HIDDIFY_ANDROID_APK_URL: ${HIDDIFY_ANDROID_APK_URL:-}
+      HIDDIFY_ANDROID_APK_SHA256: ${HIDDIFY_ANDROID_APK_SHA256:-}
+      HIDDIFY_ANDROID_CHANGELOG: ${HIDDIFY_ANDROID_CHANGELOG:-}
+      MOBILE_RELAY_SECRET: ${MOBILE_RELAY_SECRET:-}
+      MOBILE_LATEST_VERSION_CODE: ${MOBILE_LATEST_VERSION_CODE:-1}
+      MOBILE_LATEST_VERSION_NAME: ${MOBILE_LATEST_VERSION_NAME:-1.0.0}
+      MOBILE_MINIMUM_VERSION_CODE: ${MOBILE_MINIMUM_VERSION_CODE:-1}
+      MOBILE_APK_URL: ${MOBILE_APK_URL:-}
+      MOBILE_APK_SHA256: ${MOBILE_APK_SHA256:-}
+      MOBILE_RELEASE_SIGNATURE: ${MOBILE_RELEASE_SIGNATURE:-}
+      MOBILE_CHANGELOG: ${MOBILE_CHANGELOG:-}
+      VPN_EDGE_SYNC_ENABLED: ${VPN_EDGE_SYNC_ENABLED:-true}
+      RELAY_EDGE_SYNC_ENABLED: ${RELAY_EDGE_SYNC_ENABLED:-true}
+      RELAY_EDGE_SYNC_DEBOUNCE_MS: ${RELAY_EDGE_SYNC_DEBOUNCE_MS:-45000}
+      RELAY_EDGE_SYNC_PAUSE_MS: ${RELAY_EDGE_SYNC_PAUSE_MS:-12000}
+      RELAY_EDGE_SYNC_MODE: ${RELAY_EDGE_SYNC_MODE:-pilot}
+      RELAY_EDGE_AGENT_PILOT_IDS: ${RELAY_EDGE_AGENT_PILOT_IDS:-relay-eu-am}
+      EDGE_SYNC_KEY: ${EDGE_SYNC_KEY:-${EDGE_REPORT_KEY}}
+      RELAY_EDGE_SSH_KEY: /run/edge-ssh/id_ed25519
+      JUMP_HOST: ${JUMP_HOST:-root@194.127.179.178}
+      TAMPA_SSH: ${TAMPA_SSH:-root@74.115.172.101}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+      TELEGRAM_BOT_CHAT_ENABLED: ${TELEGRAM_BOT_CHAT_ENABLED:-false}
+      TELEGRAM_ALLOWED_CHAT_IDS: ${TELEGRAM_ALLOWED_CHAT_IDS:-}
+      CURSOR_API_KEY: ${CURSOR_API_KEY:-}
+      CURSOR_AGENT_MODEL: ${CURSOR_AGENT_MODEL:-composer-2.5}
+      CURSOR_AGENT_CWD: ${CURSOR_AGENT_CWD:-/app}
+      CURSOR_AGENT_NAME: ${CURSOR_AGENT_NAME:-Desktop Agent}
+      CURSOR_AGENT_STORE_DIR: ${CURSOR_AGENT_STORE_DIR:-/data/files/cursor-agent-store}
+      PROJECT_LOG_GIT_SYNC_ENABLED: ${PROJECT_LOG_GIT_SYNC_ENABLED:-true}
+      PROJECT_LOG_GIT_ROOT: ${PROJECT_LOG_GIT_ROOT:-/git-sync}
+      PROJECT_LOG_GIT_BRANCH: ${PROJECT_LOG_GIT_BRANCH:-main}
+      PROJECT_LOG_GIT_REMOTE: ${PROJECT_LOG_GIT_REMOTE:-origin}
+      PROJECT_LOG_PATH: ${PROJECT_LOG_PATH:-/git-sync/PROJECT_LOG.md}
+      GIT_SSH_COMMAND: ${GIT_SSH_COMMAND:-ssh -i /run/git-ssh/id_ed25519 -o StrictHostKeyChecking=no -o IdentitiesOnly=yes}
+      TELEGRAM_CURSOR_SESSIONS_DIR: ${TELEGRAM_CURSOR_SESSIONS_DIR:-/data/files}
+      # Re-check expiry and traffic limits frequently enough to disable a user
+      # promptly after the next reporter update. Can be overridden for staging.
+      USER_ENFORCE_INTERVAL_MS: ${USER_ENFORCE_INTERVAL_MS:-60000}
+      SUBSCRIPTION_BACKGROUND_REFRESH_ENABLED: ${SUBSCRIPTION_BACKGROUND_REFRESH_ENABLED:-true}
+      SUBSCRIPTION_REFRESH_INTERVAL_MS: ${SUBSCRIPTION_REFRESH_INTERVAL_MS:-1800000}
+      SUBSCRIPTION_REFRESH_BATCH_DELAY_MS: ${SUBSCRIPTION_REFRESH_BATCH_DELAY_MS:-1000}
+      GOOGLE_DRIVE_SUBSCRIPTIONS: ${GOOGLE_DRIVE_SUBSCRIPTIONS:-true}
+      GOOGLE_DRIVE_CREATE_FILES: ${GOOGLE_DRIVE_CREATE_FILES:-false}
+      PROBE_ALERT_CONSECUTIVE: ${PROBE_ALERT_CONSECUTIVE:-2}
+      NODE_DIAG_TIMEOUT_MS: ${NODE_DIAG_TIMEOUT_MS:-25000}
+      NODE_PROBE_MODE: ${NODE_PROBE_MODE:-masked}
+      NODE_AUTO_FIX: ${NODE_AUTO_FIX:-true}
+      INTEGRITY_ALERT_CONSECUTIVE: ${INTEGRITY_ALERT_CONSECUTIVE:-1}
+    volumes:
+      - /opt/vpn-panel-api-vps/public:/app/public:ro
+      - /opt/vpn-panel-api-vps/scripts:/app/scripts:ro
+      - /opt/vpn-panel-api-vps/lib:/app/lib:ro
+      - /opt/vpn-panel-api-vps/routes:/app/routes:ro
+      - /opt/vpn-panel/files:/data/files
+      - /opt/vpn-panel-secrets:/run/secrets:ro
+      - /opt/vpn-panel-git-sync:/git-sync:rw
+      - /root/.ssh/id_ed25519_work:/run/git-ssh/id_ed25519:ro
+      - ${RELAY_EDGE_SSH_HOST_PATH:-/root/.ssh/id_ed25519}:/run/edge-ssh/id_ed25519:ro
+    ports:
+      - "127.0.0.1:8081:8080"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5

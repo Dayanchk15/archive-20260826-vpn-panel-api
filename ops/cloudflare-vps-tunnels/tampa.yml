@@ -1,0 +1,10 @@
+tunnel: c4c2bde5-9127-4305-9c2e-3a48af4adf41
+credentials-file: /etc/cloudflared/c4c2bde5-9127-4305-9c2e-3a48af4adf41.json
+protocol: quic
+
+ingress:
+  - hostname: tampa.levospeed.online
+    service: http://127.0.0.1:18094
+  - hostname: tampa.levospeed.click
+    service: http://127.0.0.1:18094
+  - service: http_status:404

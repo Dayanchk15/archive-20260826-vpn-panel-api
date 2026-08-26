@@ -1,0 +1,36 @@
+[
+  {
+    "id": "fr1",
+    "label": "🇫🇷 France 1 Fast",
+    "host": "185.209.230.14",
+    "port": 18444,
+    "network": "tcp",
+    "security": "none"
+  },
+  {
+    "id": "fr2",
+    "label": "🇫🇷 France 2 Fast",
+    "host": "185.209.230.46",
+    "port": 18089,
+    "network": "tcp",
+    "security": "none"
+  },
+  {
+    "id": "fornex",
+    "label": "🇩🇪 Germany Fast",
+    "host": "130.17.12.61",
+    "port": 7865,
+    "network": "ws",
+    "security": "none",
+    "hostHeader": "fornex.levospeed.click",
+    "path": "/"
+  },
+  {
+    "id": "tampa",
+    "label": "🇺🇸 USA Fast",
+    "host": "74.115.172.101",
+    "port": 18080,
+    "network": "tcp",
+    "security": "none"
+  }
+]

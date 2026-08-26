@@ -1,0 +1,73 @@
+{
+  "defaults": {
+    "cpu": 2,
+    "memory": "2Gi",
+    "minInstances": 0,
+    "maxInstances": 2,
+    "timeoutSeconds": 3600,
+    "addressIp": "216.58.198.50",
+    "tmPool": true
+  },
+  "nodes": [
+    {
+      "id": "server-43",
+      "service": "germany16",
+      "name": "GoogleServer Germany 16",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "region": "europe-west3",
+      "cloudRunProfileId": "gcp-euphoric",
+      "sortOrder": 43
+    },
+    {
+      "id": "server-44",
+      "service": "neth9",
+      "name": "GoogleServer Netherlands 9",
+      "country": "Netherlands",
+      "flag": "🇳🇱",
+      "region": "europe-west4",
+      "cloudRunProfileId": "gcp-soppy",
+      "sortOrder": 44
+    },
+    {
+      "id": "server-45",
+      "service": "germany17",
+      "name": "GoogleServer Germany 17",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "region": "europe-west4",
+      "cloudRunProfileId": "gcp-soppy",
+      "sortOrder": 45
+    },
+    {
+      "id": "server-46",
+      "service": "neth10",
+      "name": "GoogleServer Netherlands 10",
+      "country": "Netherlands",
+      "flag": "🇳🇱",
+      "region": "europe-west4",
+      "cloudRunProfileId": "gcp-euphoric",
+      "sortOrder": 46
+    },
+    {
+      "id": "server-47",
+      "service": "germany18",
+      "name": "GoogleServer Germany 18",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "region": "europe-west3",
+      "cloudRunProfileId": "gcp-soppy",
+      "sortOrder": 47
+    },
+    {
+      "id": "server-48",
+      "service": "neth11",
+      "name": "GoogleServer Netherlands 11",
+      "country": "Netherlands",
+      "flag": "🇳🇱",
+      "region": "europe-west4",
+      "cloudRunProfileId": "gcp-soppy",
+      "sortOrder": 48
+    }
+  ]
+}

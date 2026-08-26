@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-13T13:18:28.182Z",
+  "sourceUrl": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS397273",
+  "liveSource": true,
+  "asn": "AS397273",
+  "provider": "Render",
+  "prefixes": [
+    "74.220.56.0/24",
+    "216.24.57.0/24"
+  ],
+  "candidates": 508,
+  "knownWorking": "216.24.57.1",
+  "requiredProtocol": "VLESS WS TLS / HTTP 101"
+}

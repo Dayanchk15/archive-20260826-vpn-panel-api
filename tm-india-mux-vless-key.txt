@@ -1,0 +1,1 @@
+vless://12305a38-97cb-49fb-9aa3-cf91815c92e9@20.207.70.99:443?encryption=none&security=tls&sni=bks6b2ht-10083.inc1.devtunnels.ms&alpn=http%2F1.1&fp=chrome&type=ws&host=bks6b2ht-10083.inc1.devtunnels.ms&path=%2F995b9db99d464f449da2fbce%3Fed%3D2048&mux=h2mux&mux_max=1&mux_min=0&mux_pad=false#TM-to-Starlink-India-MUX

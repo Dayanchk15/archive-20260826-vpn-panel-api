@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node scripts/sync-project-log-git.mjs pull",
+        "timeout": 120
+      }
+    ],
+    "stop": [
+      {
+        "command": "node scripts/sync-project-log-git.mjs push",
+        "timeout": 120
+      }
+    ]
+  }
+}

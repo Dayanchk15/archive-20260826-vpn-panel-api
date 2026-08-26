@@ -1,0 +1,19 @@
+services:
+  vpn-edge-sync-agent:
+    build:
+      context: ..
+      dockerfile: vpn-edge-sync-agent/Dockerfile
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /opt/vpn-relay-edge:/opt/vpn-relay-edge
+      - /usr/local/bin/xray:/usr/local/bin/xray:ro
+    environment:
+      EDGE_ID: ${EDGE_ID:-relay-eu-am}
+      EDGE_SYNC_KEY: ${EDGE_SYNC_KEY}
+      PANEL_PULL_URL: ${PANEL_PULL_URL:-https://sub.twidu.com/internal/edge/clients}
+      PANEL_PULL_INTERVAL_MS: ${PANEL_PULL_INTERVAL_MS:-15000}
+      EDGE_ENV_FILE: /opt/vpn-relay-edge/.env
+      XRAY_API_ADDR: 127.0.0.1:10085
+      XRAY_INBOUND_TAG: ${XRAY_INBOUND_TAG:-vless-tcp-in}
+      EDGE_SYNC_ALLOW_RESTART: "false"

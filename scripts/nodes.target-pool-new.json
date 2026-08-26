@@ -1,0 +1,51 @@
+{
+  "defaults": {
+    "cpu": 2,
+    "memory": "2Gi",
+    "minInstances": 0,
+    "maxInstances": 2,
+    "timeoutSeconds": 3600,
+    "addressIp": "216.58.198.50",
+    "tmPool": true
+  },
+  "nodes": [
+    {
+      "id": "server-27",
+      "service": "germany12",
+      "name": "GoogleServer Germany 12",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "region": "europe-west4",
+      "cloudRunProfileId": "gcp-euphoric",
+      "addressIp": "216.58.198.46",
+      "sortOrder": 27,
+      "newUsersOnly": true
+    },
+    {
+      "id": "server-41",
+      "service": "singapore1",
+      "name": "GoogleServer Singapore 1",
+      "country": "Singapore",
+      "flag": "🇸🇬",
+      "region": "asia-southeast1",
+      "cloudRunProfileId": "gcp-euphoric",
+      "addressIp": "216.58.198.50",
+      "sortOrder": 41,
+      "newUsersOnly": true
+    },
+    {
+      "id": "server-42",
+      "service": "singapore2",
+      "name": "GoogleServer Singapore 2",
+      "country": "Singapore",
+      "flag": "🇸🇬",
+      "region": "asia-southeast1",
+      "cloudRunProfileId": "gcp-soppy",
+      "addressIp": "216.58.198.50",
+      "sortOrder": 42,
+      "minInstances": 1,
+      "maxInstances": 4,
+      "newUsersOnly": true
+    }
+  ]
+}

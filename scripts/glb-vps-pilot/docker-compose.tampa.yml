@@ -1,0 +1,14 @@
+services:
+  vpn-glb-edge:
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      VLESS_WS_PATH: "/"
+      XRAY_LOG_LEVEL: error
+      VLESS_CLIENTS_JSON: '[{"userId":"usr_bnjXUy4O1NZufeqW","uuid":"cbb019d0-c345-4b37-b515-24fc68b73046","email":"dayanch-vip","name":"Dayanch VIP"}]'
+      PANEL_REPORT_URL: https://sub.twidu.com/internal/traffic/report
+      EDGE_REPORT_KEY: 8de2e46b456b066df600

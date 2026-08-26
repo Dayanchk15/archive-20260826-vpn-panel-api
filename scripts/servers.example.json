@@ -1,0 +1,136 @@
+{
+  "servers": [
+    {
+      "id": "server-01",
+      "name": "Germany 1",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "host": "vpn-germany-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-germany-1-xxxxx.a.run.app",
+      "sortOrder": 1
+    },
+    {
+      "id": "server-02",
+      "name": "Netherlands 1",
+      "country": "Netherlands",
+      "flag": "🇳🇱",
+      "host": "vpn-netherlands-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-netherlands-1-xxxxx.a.run.app",
+      "sortOrder": 2
+    },
+    {
+      "id": "server-03",
+      "name": "Finland 1",
+      "country": "Finland",
+      "flag": "🇫🇮",
+      "host": "vpn-finland-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-finland-1-xxxxx.a.run.app",
+      "sortOrder": 3
+    },
+    {
+      "id": "server-04",
+      "name": "USA 1",
+      "country": "USA",
+      "flag": "🇺🇸",
+      "host": "vpn-usa-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-usa-1-xxxxx.a.run.app",
+      "sortOrder": 4
+    },
+    {
+      "id": "server-05",
+      "name": "UK 1",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "host": "vpn-uk-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-uk-1-xxxxx.a.run.app",
+      "sortOrder": 5
+    },
+    {
+      "id": "server-06",
+      "name": "France 1",
+      "country": "France",
+      "flag": "🇫🇷",
+      "host": "vpn-france-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-france-1-xxxxx.a.run.app",
+      "sortOrder": 6
+    },
+    {
+      "id": "server-07",
+      "name": "Poland 1",
+      "country": "Poland",
+      "flag": "🇵🇱",
+      "host": "vpn-poland-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-poland-1-xxxxx.a.run.app",
+      "sortOrder": 7
+    },
+    {
+      "id": "server-08",
+      "name": "Sweden 1",
+      "country": "Sweden",
+      "flag": "🇸🇪",
+      "host": "vpn-sweden-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-sweden-1-xxxxx.a.run.app",
+      "sortOrder": 8
+    },
+    {
+      "id": "server-09",
+      "name": "Canada 1",
+      "country": "Canada",
+      "flag": "🇨🇦",
+      "host": "vpn-canada-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-canada-1-xxxxx.a.run.app",
+      "sortOrder": 9
+    },
+    {
+      "id": "server-10",
+      "name": "Japan 1",
+      "country": "Japan",
+      "flag": "🇯🇵",
+      "host": "vpn-japan-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-japan-1-xxxxx.a.run.app",
+      "sortOrder": 10
+    },
+    {
+      "id": "server-11",
+      "name": "Singapore 1",
+      "country": "Singapore",
+      "flag": "🇸🇬",
+      "host": "vpn-singapore-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-singapore-1-xxxxx.a.run.app",
+      "sortOrder": 11
+    },
+    {
+      "id": "server-12",
+      "name": "Turkey 1",
+      "country": "Turkey",
+      "flag": "🇹🇷",
+      "host": "vpn-turkey-1-xxxxx.a.run.app",
+      "port": 443,
+      "path": "/",
+      "sni": "vpn-turkey-1-xxxxx.a.run.app",
+      "sortOrder": 12
+    }
+  ]
+}

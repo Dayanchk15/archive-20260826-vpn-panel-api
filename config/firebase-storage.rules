@@ -1,0 +1,15 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{fileName} {
+      allow read: if fileName == 'subscription.txt'
+        || fileName.matches('subscription-[a-z0-9]+\\.txt')
+        || fileName.matches('u-[a-z0-9]+\\.txt');
+      allow write: if false;
+    }
+    match /subscriptions/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

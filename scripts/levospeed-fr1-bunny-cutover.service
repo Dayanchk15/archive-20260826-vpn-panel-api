@@ -1,0 +1,12 @@
+[Unit]
+Description=Route new FR1 Bunny connections to Xray v2
+Requires=xray-fr1-bunny-v2.service
+After=xray-fr1-bunny-v2.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/levospeed-fr1-bunny-cutover
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

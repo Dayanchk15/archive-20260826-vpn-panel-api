@@ -1,0 +1,65 @@
+{
+  "log": {
+    "access": "tmp/starlink2/xray-access.log",
+    "error": "tmp/starlink2/xray-error.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "tag": "starlink2-vless-ws",
+      "listen": "127.0.0.1",
+      "port": 10180,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "72f68310-dd1b-4ec8-accc-9ac1525a8a4c",
+            "email": "starlink2"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
+        }
+      }
+    },
+    {
+      "tag": "starlink2-vless-ws-legacy",
+      "listen": "127.0.0.1",
+      "port": 10181,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "72f68310-dd1b-4ec8-accc-9ac1525a8a4c",
+            "email": "starlink2-legacy"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/ae6d24b9645555821b0df81088e528e91894ee4f"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "starlink-direct",
+      "sendThrough": "__STARLINK_LOCAL_ADDRESS__",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ]
+}

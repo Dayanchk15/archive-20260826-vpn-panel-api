@@ -1,0 +1,15 @@
+[Unit]
+Description=Levospeed Cloudflare Tunnel Tampa
+After=network-online.target xray-cloudflare-ws.service
+Wants=network-online.target
+Requires=xray-cloudflare-ws.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/cloudflared tunnel --config /etc/cloudflared/levocf.yml run c4c2bde5-9127-4305-9c2e-3a48af4adf41
+Restart=always
+RestartSec=5
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

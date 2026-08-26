@@ -1,0 +1,13 @@
+---
+description: Dayanch VIP subscription overrides — no fragmentation
+alwaysApply: true
+---
+
+# Dayanch VIP (`usr_bnjXUy4O1NZufeqW`)
+
+- **No Happ fragmentation** in subscription: no `#fragmentation-*` body lines, no `fragment=` in vless links, no `fragmentation-*` HTTP headers.
+- All other clients keep panel default fragmentation (`2,0-1,tlshello`).
+- **Subscription pool:** relay lines only — `glb-vps-1` (Tampa) + `relay-eu-*` (5 EU). No 7-node Cloud Run pool.
+- When changing Dayanch sub: refresh **only** this user; do not mass-refresh subscriptions.
+
+Implementation: `lib/vip-users.js`, `resolveHappFragmentationForUser()` in `lib/happ-fragmentation.js`.

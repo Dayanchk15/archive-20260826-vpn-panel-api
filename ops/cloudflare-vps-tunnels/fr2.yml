@@ -1,0 +1,10 @@
+tunnel: 7e38e974-0d40-4d79-8bb6-71f53e656802
+credentials-file: /etc/cloudflared/7e38e974-0d40-4d79-8bb6-71f53e656802.json
+protocol: quic
+
+ingress:
+  - hostname: fr2.levospeed.online
+    service: http://127.0.0.1:18094
+  - hostname: fr2.levospeed.click
+    service: http://127.0.0.1:18094
+  - service: http_status:404

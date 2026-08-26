@@ -1,0 +1,48 @@
+{
+  admin 127.0.0.1:2019
+  http_port 8081
+  https_port 8444
+  servers {
+    protocols h1 h2
+  }
+}
+
+levospeed.it.com, www.levospeed.it.com {
+  bind 127.0.0.1
+  tls {
+    issuer acme {
+      disable_http_challenge
+    }
+  }
+  reverse_proxy https://45.140.42.39 {
+    header_up Host sub.twidu.com
+    header_down -Alt-Svc
+    transport http {
+      tls_server_name sub.twidu.com
+    }
+  }
+}
+
+fornex.levospeed.click {
+  bind 127.0.0.1
+  tls {
+    issuer acme {
+      disable_http_challenge
+    }
+  }
+  header Alt-Svc "clear"
+
+  handle /media/v3/fornex/ws* {
+    reverse_proxy 127.0.0.1:18094 {
+      header_up Host {host}
+      flush_interval -1
+      transport http {
+        versions 1.1
+      }
+    }
+  }
+
+  handle {
+    reverse_proxy h2c://127.0.0.1:18093
+  }
+}
